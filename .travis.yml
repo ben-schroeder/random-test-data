@@ -1,0 +1,16 @@
+language: java
+os: linux
+dist: bionic
+
+cache:
+  directories:
+  - "$HOME/.m2"
+
+jobs:
+  include:
+  - stage: build only
+    if: branch != master AND tag IS blank
+    before_install:
+    - mvn clean dependency:go-offline --settings .maven.xml
+    install:
+    - mvn install --settings .maven.xml
