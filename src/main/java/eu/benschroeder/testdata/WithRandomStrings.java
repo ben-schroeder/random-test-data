@@ -5,7 +5,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 /**
  * Provides random {@link String}s for testing. Based on {@link RandomStringUtils}.
  *
- * @author Benjamin Schrödder
+ * @author Benjamin Schröder
  **/
 public interface WithRandomStrings {
 
