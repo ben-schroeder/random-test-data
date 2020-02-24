@@ -1,5 +1,6 @@
 package eu.benschroeder.testdata;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.RandomUtils;
 
 /**
@@ -36,6 +37,27 @@ public interface WithRandomTestData extends WithRandomNumbers, WithRandomStrings
      */
     default byte[] randomByteArray(int length) {
         return RandomUtils.nextBytes(length);
+    }
+
+    /**
+     * Random enum of given class.
+     *
+     * @param clazz enum class
+     */
+    default <T extends Enum<T>> T randomEnum(Class<T> clazz) {
+        T[] enumConstants = clazz.getEnumConstants();
+        return enumConstants[RandomUtils.nextInt(0, enumConstants.length)];
+    }
+
+    /**
+     * Random enum of given class, excluding the given values.
+     *
+     * @param clazz    enum class
+     * @param excludes excluded values
+     */
+    default <T extends Enum<T>> T randomEnumExcluding(Class<T> clazz, T... excludes) {
+        T[] enumConstants = ArrayUtils.removeElements(clazz.getEnumConstants(), excludes);
+        return enumConstants[RandomUtils.nextInt(0, enumConstants.length)];
     }
 
 }
