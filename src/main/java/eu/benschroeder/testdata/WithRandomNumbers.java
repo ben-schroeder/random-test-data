@@ -2,6 +2,9 @@ package eu.benschroeder.testdata;
 
 import org.apache.commons.lang3.RandomUtils;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 /**
  * Provides random {@link Number}s for testing. Based on {@link RandomUtils}.
  *
@@ -25,7 +28,7 @@ public interface WithRandomNumbers {
      * @param max maximum value (exclusive)
      * @see RandomUtils#nextDouble(double, double)
      */
-    default double randomDouble(double min, double max) {
+    default double randomDouble(final double min, final double max) {
         return RandomUtils.nextDouble(min, max);
     }
 
@@ -45,7 +48,7 @@ public interface WithRandomNumbers {
      * @param max maximum value (exclusive)
      * @see RandomUtils#nextFloat(float, float)
      */
-    default float randomFloat(float min, float max) {
+    default float randomFloat(final float min, final float max) {
         return RandomUtils.nextFloat(min, max);
     }
 
@@ -65,7 +68,7 @@ public interface WithRandomNumbers {
      * @param max maximum value (exclusive)
      * @see RandomUtils#nextInt(int, int)
      */
-    default int randomInt(int min, int max) {
+    default int randomInt(final int min, final int max) {
         return RandomUtils.nextInt(min, max);
     }
 
@@ -85,8 +88,27 @@ public interface WithRandomNumbers {
      * @param max maximum value (exclusive)
      * @see RandomUtils#nextLong(long, long)
      */
-    default long randomLong(long min, long max) {
+    default long randomLong(final long min, final long max) {
         return RandomUtils.nextLong(min, max);
+    }
+
+
+    /**
+     * Random {@link java.math.BigDecimal} within 0 - Double.MAX_VALUE.
+     *
+     * @see RandomUtils#nextDouble()
+     **/
+    default BigDecimal randomBigDecimal() {
+        return BigDecimal.valueOf(RandomUtils.nextDouble());
+    }
+
+    /**
+     * Random {@link java.math.BigInteger} within 0 - Long.MAX_VALUE.
+     *
+     * @see RandomUtils#nextLong()
+     **/
+    default BigInteger randomBigInteger() {
+        return BigInteger.valueOf(RandomUtils.nextLong());
     }
 
 }
