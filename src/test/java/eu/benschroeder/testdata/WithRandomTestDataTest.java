@@ -9,7 +9,6 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.DayOfWeek;
-import java.util.Date;
 
 @ExtendWith(MockitoExtension.class)
 class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
@@ -90,29 +89,6 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
         // THEN
         thenAssert(dayOfWeek).isExactlyInstanceOf(DayOfWeek.class).isNotEqualTo(exclude1).isNotEqualTo(exclude2);
-
-    }
-
-    @RepeatedTest(100)
-    void randomPastDate_isBeforeOrEqualToNow() {
-
-        // WHEN
-        final Date date = withRandomTestData.randomPastDate();
-
-        // THEN
-        thenAssert(date).isBeforeOrEqualTo(new Date());
-
-    }
-
-
-    @RepeatedTest(100)
-    void randomFutureDate_isAfterOrEqualToNow() {
-
-        // WHEN
-        final Date date = withRandomTestData.randomFutureDate();
-
-        // THEN
-        thenAssert(date).isAfterOrEqualTo(new Date());
 
     }
 

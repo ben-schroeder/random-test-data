@@ -6,6 +6,11 @@ import org.apache.commons.lang3.RandomUtils;
 
 import java.util.Objects;
 
+/**
+ * Provides random json strings.
+ *
+ * @author Benjamin Schröder
+ **/
 public interface WithRandomJson {
 
     /**
