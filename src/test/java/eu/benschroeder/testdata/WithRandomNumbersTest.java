@@ -17,6 +17,26 @@ class WithRandomNumbersTest implements WithAssertJForMockito, WithBDDMockito {
     private WithRandomNumbers withRandomNumbers;
 
     @RepeatedTest(100)
+    void randomDouble_isValid() {
+        assertThatCode(() -> withRandomNumbers.randomDouble()).doesNotThrowAnyException();
+    }
+
+    @RepeatedTest(100)
+    void randomInt_isValid() {
+        assertThatCode(() -> withRandomNumbers.randomInt()).doesNotThrowAnyException();
+    }
+
+    @RepeatedTest(100)
+    void randomFloat_isValid() {
+        assertThatCode(() -> withRandomNumbers.randomFloat()).doesNotThrowAnyException();
+    }
+
+    @RepeatedTest(100)
+    void randomLong_isValid() {
+        assertThatCode(() -> withRandomNumbers.randomLong()).doesNotThrowAnyException();
+    }
+
+    @RepeatedTest(100)
     void randomBigDecimal_isNotNegative() {
 
         // WHEN

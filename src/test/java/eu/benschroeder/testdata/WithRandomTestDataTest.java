@@ -17,6 +17,13 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
     private WithRandomTestData withRandomTestData;
 
     @RepeatedTest(100)
+    void randomBoolean_isValid() {
+
+        assertThatCode(() -> withRandomTestData.randomBoolean()).doesNotThrowAnyException();
+
+    }
+
+    @RepeatedTest(100)
     void randomByteArray_lengthIsTen() {
 
         // WHEN

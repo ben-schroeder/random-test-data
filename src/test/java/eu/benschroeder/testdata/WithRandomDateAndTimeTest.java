@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -57,6 +58,35 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
         // THEN
         thenAssert(localDateTime).isAfterOrEqualTo(LocalDateTime.now());
+
+    }
+
+    @RepeatedTest(100)
+    void randomPastLocalDate_isBeforeOrEqualToNow() {
+
+        // WHEN
+        final LocalDate localDate = withRandomDateAndTime.randomPastLocalDate();
+
+        // THEN
+        thenAssert(localDate).isBeforeOrEqualTo(LocalDate.now());
+
+    }
+
+    @RepeatedTest(100)
+    void randomFutureLocalDate_isAfterOrEqualToNow() {
+
+        // WHEN
+        final LocalDate localDate = withRandomDateAndTime.randomFutureLocalDate();
+
+        // THEN
+        thenAssert(localDate).isAfterOrEqualTo(LocalDate.now());
+
+    }
+
+    @RepeatedTest(100)
+    void randomLocalTime_isValid() {
+
+        assertThatCode(() -> withRandomDateAndTime.randomLocalTime()).doesNotThrowAnyException();
 
     }
 
