@@ -3,16 +3,12 @@ package eu.benschroeder.testdata;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.RandomUtils;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 /**
- * Provides random data for testing
+ * Provides random data for testing.
  *
  * @author Benjamin Schröder
  **/
-public interface WithRandomTestData extends WithRandomNumbers, WithRandomStrings {
+public interface WithRandomTestData extends WithRandomNumbers, WithRandomDateAndTime, WithRandomStrings, WithRandomJson {
 
     /**
      * Random boolean.
@@ -63,24 +59,5 @@ public interface WithRandomTestData extends WithRandomNumbers, WithRandomStrings
         final T[] enumConstants = ArrayUtils.removeElements(clazz.getEnumConstants(), excludes);
         return enumConstants[RandomUtils.nextInt(0, enumConstants.length)];
     }
-
-    /**
-     * Random date between 1970-02-01T00:00:00 and now.
-     */
-    default Date randomPastDate() {
-        final long from = new GregorianCalendar(1970, Calendar.FEBRUARY, 1, 0, 0, 0).getTimeInMillis();
-        final long to = new Date().getTime();
-        return new Date(randomLong(from, to));
-    }
-
-    /**
-     * Random date between now and 2200-01-01T00:00:00.
-     */
-    default Date randomFutureDate() {
-        final long from = new Date().getTime();
-        final long to = new GregorianCalendar(2200, Calendar.JANUARY, 1, 0, 0, 0).getTimeInMillis();
-        return new Date(randomLong(from, to));
-    }
-
 
 }
