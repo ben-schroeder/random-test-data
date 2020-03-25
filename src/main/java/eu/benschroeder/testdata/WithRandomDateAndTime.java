@@ -4,7 +4,10 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -15,6 +18,34 @@ import java.util.GregorianCalendar;
  * @author Benjamin Schröder
  **/
 public interface WithRandomDateAndTime extends WithRandomNumbers {
+
+    /**
+     * Random {@link OffsetDateTime} between 1970-01-01T00:00:00Z and now.
+     */
+    default OffsetDateTime randomPastOffsetDateTime() {
+        return OffsetDateTime.ofInstant(Instant.ofEpochSecond(randomLong(Constants.MIN_UTC_EPOCH, Instant.now().getEpochSecond())), ZoneId.systemDefault());
+    }
+
+    /**
+     * Random {@link OffsetDateTime} between now and 2200-01-01T00:00:00Z.
+     */
+    default OffsetDateTime randomFutureOffsetDateTime() {
+        return OffsetDateTime.ofInstant(Instant.ofEpochSecond(randomLong(Instant.now().getEpochSecond(), Constants.MAX_UTC_EPOCH)), ZoneId.systemDefault());
+    }
+
+    /**
+     * Random {@link ZonedDateTime} between 1970-01-01T00:00:00Z and now.
+     */
+    default ZonedDateTime randomPastZonedDateTime() {
+        return ZonedDateTime.ofInstant(Instant.ofEpochSecond(randomLong(Constants.MIN_UTC_EPOCH, Instant.now().getEpochSecond())), ZoneId.systemDefault());
+    }
+
+    /**
+     * Random {@link ZonedDateTime} between now and 2200-01-01T00:00:00Z.
+     */
+    default ZonedDateTime randomFutureZonedDateTime() {
+        return ZonedDateTime.ofInstant(Instant.ofEpochSecond(randomLong(Instant.now().getEpochSecond(), Constants.MAX_UTC_EPOCH)), ZoneId.systemDefault());
+    }
 
     /**
      * Random {@link LocalDateTime} between 1970-01-01T00:00:00 and now.

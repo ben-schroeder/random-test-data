@@ -8,5 +8,31 @@ Random test data for unit tests
 ## Requirements
 * Java >= 8
 
+## Artifacts
+```
+<dependency>
+  <groupId>eu.benschroeder</groupId>
+  <artifactId>random-test-data</artifactId>
+  <version>0.5</version>
+</dependency>
+``` 
+
 ## Usage
-TODO
+```
+import eu.benschroeder.testdata.WithRandomTestData;
+
+public class MyUnitTest implements WithRandomTestData {
+
+    @Test
+    void testMyMethod() {
+
+        final long anyId = randomLong();
+        final String anyName = randomAlphabetic();
+        final LocalDateTime anyLocalDateTime = randomPastLocalDateTime();
+
+        ...
+
+    }
+
+}
+```

@@ -8,7 +8,7 @@ import org.apache.commons.lang3.RandomUtils;
  *
  * @author Benjamin Schröder
  **/
-public interface WithRandomTestData extends WithRandomNumbers, WithRandomStrings, WithRandomJson, WithRandomDateAndTime {
+public interface WithRandomTestData extends WithRandomNumbers, WithRandomDateAndTime, WithRandomStrings, WithRandomJson {
 
     /**
      * Random boolean.

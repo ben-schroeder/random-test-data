@@ -7,8 +7,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,6 +40,72 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
         // THEN
         thenAssert(date).isAfterOrEqualTo(new Date());
+
+    }
+
+    @RepeatedTest(100)
+    void randomPastOffsetDateTime_isBeforeOrEqualToNow() {
+
+        // WHEN
+        final OffsetDateTime offsetDateTime = withRandomDateAndTime.randomPastOffsetDateTime();
+
+        // THEN
+        thenAssert(offsetDateTime).isBeforeOrEqualTo(OffsetDateTime.now());
+
+    }
+
+    @RepeatedTest(100)
+    void randomPastOffsetDateTime_isAfterOrEqualToEpoch() {
+
+        // WHEN
+        final OffsetDateTime offsetDateTime = withRandomDateAndTime.randomPastOffsetDateTime();
+
+        // THEN
+        thenAssert(offsetDateTime).isAfterOrEqualTo(OffsetDateTime.ofInstant(Instant.EPOCH, ZoneId.systemDefault()));
+
+    }
+
+    @RepeatedTest(100)
+    void randomFutureOffsetDateTime_isAfterOrEqualToNow() {
+
+        // WHEN
+        final OffsetDateTime offsetDateTime = withRandomDateAndTime.randomFutureOffsetDateTime();
+
+        // THEN
+        thenAssert(offsetDateTime).isAfterOrEqualTo(OffsetDateTime.now());
+
+    }
+
+    @RepeatedTest(100)
+    void randomPastZonedDateTime_isBeforeOrEqualToNow() {
+
+        // WHEN
+        final ZonedDateTime zonedDateTime = withRandomDateAndTime.randomPastZonedDateTime();
+
+        // THEN
+        thenAssert(zonedDateTime).isBeforeOrEqualTo(ZonedDateTime.now());
+
+    }
+
+    @RepeatedTest(100)
+    void randomPastZonedDateTime_isAfterOrEqualToEpoch() {
+
+        // WHEN
+        final ZonedDateTime zonedDateTime = withRandomDateAndTime.randomPastZonedDateTime();
+
+        // THEN
+        thenAssert(zonedDateTime).isAfterOrEqualTo(ZonedDateTime.ofInstant(Instant.EPOCH, ZoneId.systemDefault()));
+
+    }
+
+    @RepeatedTest(100)
+    void randomFutureZonedDateTime_isAfterOrEqualToNow() {
+
+        // WHEN
+        final ZonedDateTime zonedDateTime = withRandomDateAndTime.randomFutureZonedDateTime();
+
+        // THEN
+        thenAssert(zonedDateTime).isAfterOrEqualTo(ZonedDateTime.now());
 
     }
 
