@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>random-test-data</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.6-SNAPSHOT</version>
 
     <name>random-test-data</name>
     <description>Random test data for unit tests</description>
