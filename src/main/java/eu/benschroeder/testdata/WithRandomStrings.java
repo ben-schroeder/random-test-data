@@ -1,9 +1,9 @@
 package eu.benschroeder.testdata;
 
-import org.apache.commons.lang3.RandomStringUtils;
+import eu.benschroeder.testdata.statics.RandomStrings;
 
 /**
- * Provides random {@link String}s for testing. Based on {@link RandomStringUtils}.
+ * Provides the random {@link String}s of {@link RandomStrings} as an interface.
  *
  * @author Benjamin Schröder
  **/
@@ -12,10 +12,10 @@ public interface WithRandomStrings {
     /**
      * Random alphabetic (A-Z, a-z) string of length 10.
      *
-     * @see RandomStringUtils#randomAlphabetic(int)
+     * @see RandomStrings#randomAlphabetic()
      **/
     default String randomAlphabetic() {
-        return RandomStringUtils.randomAlphabetic(10);
+        return RandomStrings.randomAlphabetic();
     }
 
     /**
@@ -23,19 +23,19 @@ public interface WithRandomStrings {
      *
      * @param min min value (inclusive)
      * @param max max value (exclusive)
-     * @see RandomStringUtils#randomAlphabetic(int, int)
+     * @see RandomStrings#randomAlphabetic(int, int)
      */
-    default String randomAlphabetic(int min, int max) {
-        return RandomStringUtils.randomAlphabetic(min, max);
+    default String randomAlphabetic(final int min, final int max) {
+        return RandomStrings.randomAlphabetic(min, max);
     }
 
     /**
      * Random numeric (0-9) string of length 10.
      *
-     * @see RandomStringUtils#randomNumeric(int)
+     * @see RandomStrings#randomNumeric
      **/
     default String randomNumeric() {
-        return RandomStringUtils.randomNumeric(10);
+        return RandomStrings.randomNumeric();
     }
 
     /**
@@ -43,19 +43,19 @@ public interface WithRandomStrings {
      *
      * @param min min value (inclusive)
      * @param max max value (exclusive)
-     * @see RandomStringUtils#randomNumeric(int, int)
+     * @see RandomStrings#randomNumeric(int, int)
      */
-    default String randomNumeric(int min, int max) {
-        return RandomStringUtils.randomNumeric(min, max);
+    default String randomNumeric(final int min, final int max) {
+        return RandomStrings.randomNumeric(min, max);
     }
 
     /**
      * Random alphanumeric (A-Z, a-z, 0-9) string of length 10.
      *
-     * @see RandomStringUtils#randomAlphanumeric(int)
+     * @see RandomStrings#randomAlphanumeric
      **/
     default String randomAlphanumeric() {
-        return RandomStringUtils.randomAlphanumeric(10);
+        return RandomStrings.randomAlphanumeric();
     }
 
     /**
@@ -63,19 +63,19 @@ public interface WithRandomStrings {
      *
      * @param min min value (inclusive)
      * @param max max value (exclusive)
-     * @see RandomStringUtils#randomAlphanumeric(int, int)
+     * @see RandomStrings#randomAlphanumeric(int, int)
      */
-    default String randomAlphanumeric(int min, int max) {
-        return RandomStringUtils.randomAlphanumeric(min, max);
+    default String randomAlphanumeric(final int min, final int max) {
+        return RandomStrings.randomAlphanumeric(min, max);
     }
 
     /**
      * Random string (ASCII value is between {@code 32} and {@code 126} (inclusive)) of length 10.
      *
-     * @see RandomStringUtils#random(int)
+     * @see RandomStrings#randomAscii()
      **/
     default String randomAscii() {
-        return RandomStringUtils.randomAscii(10);
+        return RandomStrings.randomAscii();
     }
 
     /**
@@ -83,10 +83,10 @@ public interface WithRandomStrings {
      *
      * @param min min value (inclusive)
      * @param max max value (exclusive)
-     * @see RandomStringUtils#randomAscii(int, int)
+     * @see RandomStrings#randomAscii(int, int)
      */
-    default String randomAscii(int min, int max) {
-        return RandomStringUtils.randomAscii(min, max);
+    default String randomAscii(final int min, final int max) {
+        return RandomStrings.randomAscii(min, max);
     }
 
 }
