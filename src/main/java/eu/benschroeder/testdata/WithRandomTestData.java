@@ -1,7 +1,6 @@
 package eu.benschroeder.testdata;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.RandomUtils;
+import eu.benschroeder.testdata.statics.RandomTestData;
 
 /**
  * Provides random data for testing.
@@ -9,44 +8,43 @@ import org.apache.commons.lang3.RandomUtils;
  * @author Benjamin Schröder
  **/
 public interface WithRandomTestData extends WithRandomNumbers, WithRandomDateAndTime, WithRandomStrings, WithRandomJson {
-
+    
     /**
      * Random boolean.
      *
-     * @see RandomUtils#nextBoolean()
+     * @see RandomTestData#randomBoolean()
      **/
     default boolean randomBoolean() {
-        return RandomUtils.nextBoolean();
+        return RandomTestData.randomBoolean();
     }
 
     /**
      * Random byte array of length 10.
      *
-     * @see RandomUtils#nextBytes(int)
+     * @see RandomTestData#randomByteArray()
      **/
     default byte[] randomByteArray() {
-        return RandomUtils.nextBytes(10);
+        return RandomTestData.randomByteArray();
     }
-
 
     /**
      * Random byte array of given length.
      *
      * @param length length of the byte array
-     * @see RandomUtils#nextBytes(int)
+     * @see RandomTestData#randomByteArray(int)
      */
     default byte[] randomByteArray(final int length) {
-        return RandomUtils.nextBytes(length);
+        return RandomTestData.randomByteArray(length);
     }
 
     /**
      * Random enum of given class.
      *
      * @param clazz enum class
+     * @see RandomTestData#randomEnum(Class)
      */
     default <T extends Enum<T>> T randomEnum(final Class<T> clazz) {
-        final T[] enumConstants = clazz.getEnumConstants();
-        return enumConstants[RandomUtils.nextInt(0, enumConstants.length)];
+        return RandomTestData.randomEnum(clazz);
     }
 
     /**
@@ -54,10 +52,10 @@ public interface WithRandomTestData extends WithRandomNumbers, WithRandomDateAnd
      *
      * @param clazz    enum class
      * @param excludes excluded values
+     * @see RandomTestData#randomEnumExcluding(Class, Enum[])
      */
     default <T extends Enum<T>> T randomEnumExcluding(final Class<T> clazz, final T... excludes) {
-        final T[] enumConstants = ArrayUtils.removeElements(clazz.getEnumConstants(), excludes);
-        return enumConstants[RandomUtils.nextInt(0, enumConstants.length)];
+        return RandomTestData.randomEnumExcluding(clazz, excludes);
     }
 
 }

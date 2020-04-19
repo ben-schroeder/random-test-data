@@ -20,18 +20,29 @@ class WithRandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
         final String randomJson = withRandomJson.randomJson();
 
         // THEN
-        thenAssert(randomJson).matches("\\{ \\\"[A-Za-z]{5}\\\": \\\"[A-Za-z]{5}\\\" \\}");
+        thenAssert(randomJson).matches(JsonPatterns.STRING_PATTERN);
 
     }
 
     @RepeatedTest(100)
-    void randomJsonIntegerValue() {
+    void randomJson_valueClassInteger() {
 
         // WHEN
-        final String randomJson = withRandomJson.randomJsonIntegerValue();
+        final String randomJson = withRandomJson.randomJson(Integer.class);
 
         // THEN
-        thenAssert(randomJson).matches("\\{ \\\"[A-Za-z]{5}\\\": [0-9]{1,5} \\}");
+        thenAssert(randomJson).matches(JsonPatterns.INTEGER_PATTERN);
+
+    }
+
+    @RepeatedTest(100)
+    void randomJson_valueClassString() {
+
+        // WHEN
+        final String randomJson = withRandomJson.randomJson(String.class);
+
+        // THEN
+        thenAssert(randomJson).matches(JsonPatterns.STRING_PATTERN);
 
     }
 

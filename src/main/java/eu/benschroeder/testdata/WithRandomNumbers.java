@@ -1,12 +1,12 @@
 package eu.benschroeder.testdata;
 
-import org.apache.commons.lang3.RandomUtils;
+import eu.benschroeder.testdata.statics.RandomNumbers;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
- * Provides random {@link Number}s for testing. Based on {@link RandomUtils}.
+ * Provides the random {@link Number}s of {@link RandomNumbers} as an interface.
  *
  * @author Benjamin Schröder
  **/
@@ -15,10 +15,10 @@ public interface WithRandomNumbers {
     /**
      * Random double.
      *
-     * @see RandomUtils#nextDouble()
+     * @see RandomNumbers#randomDouble()
      **/
     default double randomDouble() {
-        return RandomUtils.nextDouble();
+        return RandomNumbers.randomDouble();
     }
 
     /**
@@ -26,19 +26,20 @@ public interface WithRandomNumbers {
      *
      * @param min minimum value (inclusive)
      * @param max maximum value (exclusive)
-     * @see RandomUtils#nextDouble(double, double)
+     * @throws IllegalArgumentException if {@code min > max} or if {@code min} is negative
+     * @see RandomNumbers#randomDouble(double, double)
      */
     default double randomDouble(final double min, final double max) {
-        return RandomUtils.nextDouble(min, max);
+        return RandomNumbers.randomDouble(min, max);
     }
 
     /**
      * Random float.
      *
-     * @see RandomUtils#nextFloat()
+     * @see RandomNumbers#randomFloat()
      **/
     default float randomFloat() {
-        return RandomUtils.nextFloat();
+        return RandomNumbers.randomFloat();
     }
 
     /**
@@ -46,19 +47,20 @@ public interface WithRandomNumbers {
      *
      * @param min minimum value (inclusive)
      * @param max maximum value (exclusive)
-     * @see RandomUtils#nextFloat(float, float)
+     * @throws IllegalArgumentException if {@code min > max} or if {@code min} is negative
+     * @see RandomNumbers#randomFloat(float, float)
      */
     default float randomFloat(final float min, final float max) {
-        return RandomUtils.nextFloat(min, max);
+        return RandomNumbers.randomFloat(min, max);
     }
 
     /**
      * Random int.
      *
-     * @see RandomUtils#nextInt()
+     * @see RandomNumbers#randomInt()
      **/
     default int randomInt() {
-        return RandomUtils.nextInt();
+        return RandomNumbers.randomInt();
     }
 
     /**
@@ -66,19 +68,20 @@ public interface WithRandomNumbers {
      *
      * @param min minimum value (inclusive)
      * @param max maximum value (exclusive)
-     * @see RandomUtils#nextInt(int, int)
+     * @throws IllegalArgumentException if {@code min > max} or if {@code min} is negative
+     * @see RandomNumbers#randomInt(int, int)
      */
     default int randomInt(final int min, final int max) {
-        return RandomUtils.nextInt(min, max);
+        return RandomNumbers.randomInt(min, max);
     }
 
     /**
      * Random long.
      *
-     * @see RandomUtils#nextLong()
+     * @see RandomNumbers#randomLong()
      **/
     default long randomLong() {
-        return RandomUtils.nextLong();
+        return RandomNumbers.randomLong();
     }
 
     /**
@@ -86,29 +89,30 @@ public interface WithRandomNumbers {
      *
      * @param min minimum value (inclusive)
      * @param max maximum value (exclusive)
-     * @see RandomUtils#nextLong(long, long)
+     * @throws IllegalArgumentException if {@code min > max} or if {@code min} is negative
+     * @see RandomNumbers#randomLong(long, long)
      */
     default long randomLong(final long min, final long max) {
-        return RandomUtils.nextLong(min, max);
+        return RandomNumbers.randomLong(min, max);
     }
 
 
     /**
      * Random {@link java.math.BigDecimal} within 0 - Double.MAX_VALUE.
      *
-     * @see RandomUtils#nextDouble()
+     * @see RandomNumbers#randomBigDecimal()
      **/
     default BigDecimal randomBigDecimal() {
-        return BigDecimal.valueOf(RandomUtils.nextDouble());
+        return RandomNumbers.randomBigDecimal();
     }
 
     /**
      * Random {@link java.math.BigInteger} within 0 - Long.MAX_VALUE.
      *
-     * @see RandomUtils#nextLong()
+     * @see RandomNumbers#randomBigInteger()
      **/
     default BigInteger randomBigInteger() {
-        return BigInteger.valueOf(RandomUtils.nextLong());
+        return RandomNumbers.randomBigInteger();
     }
 
 }

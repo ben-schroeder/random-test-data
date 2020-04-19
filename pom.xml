@@ -5,11 +5,11 @@
     <parent>
         <groupId>eu.benschroeder</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>1</version>
+        <version>2</version>
     </parent>
 
     <artifactId>random-test-data</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.6-SNAPSHOT</version>
 
     <name>random-test-data</name>
     <description>Random test data for unit tests</description>
@@ -25,26 +25,26 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mockito.version>3.3.0</mockito.version>
+        <mockito.version>3.3.3</mockito.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
+            <version>3.10</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
-            <scope>test</scope>
+            <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.1</version>
+            <version>5.6.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
