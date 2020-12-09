@@ -13,7 +13,7 @@ Random test data for unit tests
 <dependency>
   <groupId>eu.benschroeder</groupId>
   <artifactId>random-test-data</artifactId>
-  <version>0.5</version>
+  <version>0.7</version>
 </dependency>
 ``` 
 
