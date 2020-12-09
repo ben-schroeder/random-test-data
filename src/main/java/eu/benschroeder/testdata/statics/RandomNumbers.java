@@ -15,12 +15,21 @@ import java.math.BigInteger;
 public class RandomNumbers {
 
     /**
-     * Random double.
+     * Random double between 0 and {@link Double#MAX_VALUE}.
      *
      * @see RandomUtils#nextDouble()
      **/
     public double randomDouble() {
         return RandomUtils.nextDouble();
+    }
+
+    /**
+     * Random double between 1 and {@link Double#MAX_VALUE}.
+     *
+     * @see RandomUtils#nextDouble(double, double)
+     **/
+    public double randomPositiveDouble() {
+        return RandomUtils.nextDouble(1, Double.MAX_VALUE);
     }
 
     /**
@@ -36,12 +45,21 @@ public class RandomNumbers {
     }
 
     /**
-     * Random float.
+     * Random float between 0 and {@link Float#MAX_VALUE}.
      *
      * @see RandomUtils#nextFloat()
      **/
     public float randomFloat() {
         return RandomUtils.nextFloat();
+    }
+
+    /**
+     * Random float between 1 and {@link Float#MAX_VALUE}.
+     *
+     * @see RandomUtils#nextFloat(float, float)
+     **/
+    public float randomPositiveFloat() {
+        return RandomUtils.nextFloat(1, Float.MAX_VALUE);
     }
 
     /**
@@ -66,6 +84,15 @@ public class RandomNumbers {
     }
 
     /**
+     * Random int between 1 and {@link Integer#MAX_VALUE}.
+     *
+     * @see RandomUtils#nextInt(int, int)
+     **/
+    public int randomPositiveInt() {
+        return RandomUtils.nextInt(1, Integer.MAX_VALUE);
+    }
+
+    /**
      * Random int between min (inclusive) and max (exclusive).
      *
      * @param min minimum value (inclusive)
@@ -78,12 +105,21 @@ public class RandomNumbers {
     }
 
     /**
-     * Random long.
+     * Random long between 0 and {@link Long#MAX_VALUE}.
      *
      * @see RandomUtils#nextLong()
      **/
     public long randomLong() {
         return RandomUtils.nextLong();
+    }
+
+    /**
+     * Random long between 1 and {@link Long#MAX_VALUE}.
+     *
+     * @see RandomUtils#nextLong(long, long)
+     **/
+    public long randomPositiveLong() {
+        return RandomUtils.nextLong(1, Long.MAX_VALUE);
     }
 
     /**
@@ -97,7 +133,7 @@ public class RandomNumbers {
     public long randomLong(final long min, final long max) {
         return RandomUtils.nextLong(min, max);
     }
-    
+
     /**
      * Random {@link java.math.BigDecimal} within 0 - Double.MAX_VALUE.
      *

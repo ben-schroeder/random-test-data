@@ -1,38 +1,54 @@
 package eu.benschroeder.testdata.statics;
 
 import eu.benschroeder.assertj.WithAssertJForMockito;
-import eu.benschroeder.mockito.WithBDDMockito;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-@ExtendWith(MockitoExtension.class)
-class RandomNumbersTest implements WithAssertJForMockito, WithBDDMockito {
+class RandomNumbersTest implements WithAssertJForMockito {
 
-    @RepeatedTest(100)
-    void randomDouble_isValid() {
-        assertThatCode(RandomNumbers::randomDouble).doesNotThrowAnyException();
+    @RepeatedTest(1_000)
+    void randomDouble_isNotNegative() {
+
+        // WHEN
+        final double randomDouble = RandomNumbers.randomDouble();
+
+        // THEN
+        thenAssert(randomDouble).isNotNegative();
     }
 
-    @RepeatedTest(100)
-    void randomInt_isValid() {
-        assertThatCode(RandomNumbers::randomInt).doesNotThrowAnyException();
+    @RepeatedTest(1_000)
+    void randomInt_isNotNegative() {
+
+        // WHEN
+        final int randomInt = RandomNumbers.randomInt();
+
+        // THEN
+        thenAssert(randomInt).isNotNegative();
     }
 
-    @RepeatedTest(100)
-    void randomFloat_isValid() {
-        assertThatCode(RandomNumbers::randomFloat).doesNotThrowAnyException();
+    @RepeatedTest(1_000)
+    void randomFloat_isNotNegative() {
+
+        // WHEN
+        final float randomFloat = RandomNumbers.randomFloat();
+
+        // THEN
+        thenAssert(randomFloat).isNotNegative();
     }
 
-    @RepeatedTest(100)
-    void randomLong_isValid() {
-        assertThatCode(RandomNumbers::randomLong).doesNotThrowAnyException();
+    @RepeatedTest(1_000)
+    void randomLong_isNotNegative() {
+
+        // WHEN
+        final long randomLong = RandomNumbers.randomLong();
+
+        // THEN
+        thenAssert(randomLong).isNotNegative();
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomBigDecimal_isNotNegative() {
 
         // WHEN
@@ -43,7 +59,7 @@ class RandomNumbersTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomBigInteger_isNotNegative() {
 
         // WHEN
@@ -53,5 +69,50 @@ class RandomNumbersTest implements WithAssertJForMockito, WithBDDMockito {
         thenAssert(bigInteger).isNotNegative();
 
     }
+
+    @RepeatedTest(1_000)
+    void randomPositiveInt_isPositive() {
+
+        // WHEN
+        final int positiveInt = RandomNumbers.randomPositiveInt();
+
+        // THEN
+        thenAssert(positiveInt).isPositive();
+
+    }
+
+    @RepeatedTest(1_000)
+    void randomPositiveLong_isPositive() {
+
+        // WHEN
+        final long positiveLong = RandomNumbers.randomPositiveLong();
+
+        // THEN
+        thenAssert(positiveLong).isPositive();
+
+    }
+
+    @RepeatedTest(1_000)
+    void randomPositiveFloat_isPositive() {
+
+        // WHEN
+        final float positiveFloat = RandomNumbers.randomPositiveFloat();
+
+        // THEN
+        thenAssert(positiveFloat).isPositive();
+
+    }
+
+    @RepeatedTest(1_000)
+    void randomPositiveDouble_isPositive() {
+
+        // WHEN
+        final double positiveDouble = RandomNumbers.randomPositiveDouble();
+
+        // THEN
+        thenAssert(positiveDouble).isPositive();
+
+    }
+
 
 }

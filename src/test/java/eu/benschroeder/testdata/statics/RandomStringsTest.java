@@ -1,17 +1,13 @@
 package eu.benschroeder.testdata.statics;
 
 import eu.benschroeder.assertj.WithAssertJForMockito;
-import eu.benschroeder.mockito.WithBDDMockito;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.security.SecureRandom;
 
-@ExtendWith(MockitoExtension.class)
-class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
+class RandomStringsTest implements WithAssertJForMockito {
 
     private static SecureRandom RANDOM;
 
@@ -21,7 +17,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
         RANDOM = SecureRandom.getInstance("SHA1PRNG");
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_sizeIsTen() {
 
         // WHEN
@@ -32,7 +28,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_containsOnlyAlphabeticCharacters() {
 
         // WHEN
@@ -43,7 +39,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
@@ -58,7 +54,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_withMinMax_containsOnlyAlphabeticCharacters() {
 
         // GIVEN
@@ -73,7 +69,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_sizeIsTen() {
 
         // WHEN
@@ -83,7 +79,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
         thenAssert(randomNumeric).hasSize(10);
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_containsOnlyDigits() {
 
         // WHEN
@@ -93,7 +89,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
         thenAssert(randomNumeric).containsOnlyDigits();
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
@@ -108,7 +104,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_withMinMax_containsOnlyDigits() {
 
         // GIVEN
@@ -123,7 +119,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_sizeIsTen() {
 
         // WHEN
@@ -134,7 +130,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_containsOnlyAlphanumericCharacters() {
 
         // WHEN
@@ -145,7 +141,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
@@ -160,7 +156,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_withMinMax_containsOnlyAlphanumeriCharacters() {
 
         // GIVEN
@@ -175,7 +171,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAscii_sizeIsTen() {
 
         // WHEN
@@ -186,7 +182,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAscii_containsOnlyAsciiCharacters() {
 
         // WHEN
@@ -197,7 +193,7 @@ class RandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAscii_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN

@@ -25,191 +25,191 @@ class WithRandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
     @Spy
     private WithRandomStrings withRandomStrings;
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_sizeIsTen() {
 
         // WHEN
-        String randomAlphabetic = withRandomStrings.randomAlphabetic();
+        final String randomAlphabetic = withRandomStrings.randomAlphabetic();
 
         // THEN
         thenAssert(randomAlphabetic).hasSize(10);
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_containsOnlyAlphabeticCharacters() {
 
         // WHEN
-        String randomAlphabetic = withRandomStrings.randomAlphabetic();
+        final String randomAlphabetic = withRandomStrings.randomAlphabetic();
 
         // THEN
         thenAssert(randomAlphabetic).matches("[A-Za-z]+");
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomAlphabetic = withRandomStrings.randomAlphabetic(min, max);
+        final String randomAlphabetic = withRandomStrings.randomAlphabetic(min, max);
 
         // THEN
         thenAssert(randomAlphabetic).hasSizeBetween(min, max - 1);
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphabetic_withMinMax_containsOnlyAlphabeticCharacters() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomAlphabetic = withRandomStrings.randomAlphabetic(min, max);
+        final String randomAlphabetic = withRandomStrings.randomAlphabetic(min, max);
 
         // THEN
         thenAssert(randomAlphabetic).matches("[A-Za-z]+");
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_sizeIsTen() {
 
         // WHEN
-        String randomNumeric = withRandomStrings.randomNumeric();
+        final String randomNumeric = withRandomStrings.randomNumeric();
 
         // THEN
         thenAssert(randomNumeric).hasSize(10);
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_containsOnlyDigits() {
 
         // WHEN
-        String randomNumeric = withRandomStrings.randomNumeric();
+        final String randomNumeric = withRandomStrings.randomNumeric();
 
         // THEN
         thenAssert(randomNumeric).containsOnlyDigits();
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomNumeric = withRandomStrings.randomNumeric(min, max);
+        final String randomNumeric = withRandomStrings.randomNumeric(min, max);
 
         // THEN
         thenAssert(randomNumeric).hasSizeBetween(min, max - 1);
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomNumeric_withMinMax_containsOnlyDigits() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomNumeric = withRandomStrings.randomNumeric(min, max);
+        final String randomNumeric = withRandomStrings.randomNumeric(min, max);
 
         // THEN
         thenAssert(randomNumeric).containsOnlyDigits();
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_sizeIsTen() {
 
         // WHEN
-        String randomAlphanumeric = withRandomStrings.randomAlphanumeric();
+        final String randomAlphanumeric = withRandomStrings.randomAlphanumeric();
 
         // THEN
         thenAssert(randomAlphanumeric).hasSize(10);
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_containsOnlyAlphanumericCharacters() {
 
         // WHEN
-        String randomAlphanumeric = withRandomStrings.randomAlphanumeric();
+        final String randomAlphanumeric = withRandomStrings.randomAlphanumeric();
 
         // THEN
         thenAssert(randomAlphanumeric).matches("[A-Za-z0-9]+");
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomAlphanumeric = withRandomStrings.randomAlphanumeric(min, max);
+        final String randomAlphanumeric = withRandomStrings.randomAlphanumeric(min, max);
 
         // THEN
         thenAssert(randomAlphanumeric).hasSizeBetween(min, max - 1);
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAlphanumeric_withMinMax_containsOnlyAlphanumeriCharacters() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomAlphanumeric = withRandomStrings.randomAlphanumeric(min, max);
+        final String randomAlphanumeric = withRandomStrings.randomAlphanumeric(min, max);
 
         // THEN
         thenAssert(randomAlphanumeric).matches("[A-Za-z0-9]+");
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAscii_sizeIsTen() {
 
         // WHEN
-        String randomAscii = withRandomStrings.randomAscii();
+        final String randomAscii = withRandomStrings.randomAscii();
 
         // THEN
         thenAssert(randomAscii).hasSize(10);
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAscii_containsOnlyAsciiCharacters() {
 
         // WHEN
-        String randomAscii = withRandomStrings.randomAscii();
+        final String randomAscii = withRandomStrings.randomAscii();
 
         // THEN
         thenAssert(randomAscii).matches("[\\x20-\\x7E]+");
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomAscii_withMinMax_SizeIsBetweenMinAndMax() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomAscii = withRandomStrings.randomAscii(min, max);
+        final String randomAscii = withRandomStrings.randomAscii(min, max);
 
         // THEN
         thenAssert(randomAscii).hasSizeBetween(min, max - 1);
@@ -220,18 +220,18 @@ class WithRandomStringsTest implements WithAssertJForMockito, WithBDDMockito {
     void randomAscii_withMinMax_containsOnlyAsciiCharacters() {
 
         // GIVEN
-        int min = createMinValue();
-        int max = createMaxValue(min);
+        final int min = createMinValue();
+        final int max = createMaxValue(min);
 
         // WHEN
-        String randomAscii = withRandomStrings.randomAscii(min, max);
+        final String randomAscii = withRandomStrings.randomAscii(min, max);
 
         // THEN
         thenAssert(randomAscii).matches("[\\x20-\\x7E]+");
 
     }
 
-    private int createMaxValue(int min) {
+    private int createMaxValue(final int min) {
         return min + RANDOM.nextInt(100) + 1;
     }
 

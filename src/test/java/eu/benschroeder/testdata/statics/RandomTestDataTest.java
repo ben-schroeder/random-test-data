@@ -1,25 +1,21 @@
 package eu.benschroeder.testdata.statics;
 
 import eu.benschroeder.assertj.WithAssertJForMockito;
-import eu.benschroeder.mockito.WithBDDMockito;
 import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.DayOfWeek;
 
-@ExtendWith(MockitoExtension.class)
-class RandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
+class RandomTestDataTest implements WithAssertJForMockito {
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomBoolean_isValid() {
 
         assertThatCode(RandomTestData::randomBoolean).doesNotThrowAnyException();
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomByteArray_lengthIsTen() {
 
         // WHEN
@@ -30,7 +26,7 @@ class RandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomByteArray_lengthMatchesGivenLength() {
 
         // GIVEN
@@ -44,7 +40,7 @@ class RandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnum() {
 
         // WHEN
@@ -55,7 +51,7 @@ class RandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnumExcluding_noExclude() {
 
         // WHEN
@@ -66,7 +62,7 @@ class RandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnumExcluding_oneExclude() {
 
         // GIVEN
@@ -80,7 +76,7 @@ class RandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnumExcluding_twoExcludes() {
 
         // GIVEN

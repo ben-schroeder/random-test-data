@@ -13,12 +13,21 @@ import java.math.BigInteger;
 public interface WithRandomNumbers {
 
     /**
-     * Random double.
+     * Random double between 0 and {@link Double#MAX_VALUE}.
      *
      * @see RandomNumbers#randomDouble()
      **/
     default double randomDouble() {
         return RandomNumbers.randomDouble();
+    }
+
+    /**
+     * Random double between 1 and {@link Double#MAX_VALUE}.
+     *
+     * @see RandomNumbers#randomPositiveDouble()
+     **/
+    default double randomPositiveDouble() {
+        return RandomNumbers.randomPositiveDouble();
     }
 
     /**
@@ -34,12 +43,21 @@ public interface WithRandomNumbers {
     }
 
     /**
-     * Random float.
+     * Random float between 0 and {@link Float#MAX_VALUE}.
      *
      * @see RandomNumbers#randomFloat()
      **/
     default float randomFloat() {
         return RandomNumbers.randomFloat();
+    }
+
+    /**
+     * Random float between 1 and {@link Float#MAX_VALUE}.
+     *
+     * @see RandomNumbers#randomPositiveFloat()
+     **/
+    default float randomPositiveFloat() {
+        return RandomNumbers.randomPositiveFloat();
     }
 
     /**
@@ -55,12 +73,21 @@ public interface WithRandomNumbers {
     }
 
     /**
-     * Random int.
+     * Random int between 0 and {@link Integer#MAX_VALUE}.
      *
      * @see RandomNumbers#randomInt()
      **/
     default int randomInt() {
         return RandomNumbers.randomInt();
+    }
+
+    /**
+     * Random int between 1 and {@link Integer#MAX_VALUE}.
+     *
+     * @see RandomNumbers#randomPositiveInt()
+     **/
+    default int randomPositiveInt() {
+        return RandomNumbers.randomPositiveInt();
     }
 
     /**
@@ -76,12 +103,21 @@ public interface WithRandomNumbers {
     }
 
     /**
-     * Random long.
+     * Random long between 0 and {@link Long#MAX_VALUE}.
      *
      * @see RandomNumbers#randomLong()
      **/
     default long randomLong() {
         return RandomNumbers.randomLong();
+    }
+
+    /**
+     * Random long between 1 and {@link Long#MAX_VALUE}.
+     *
+     * @see RandomNumbers#randomPositiveLong()
+     **/
+    default long randomPositiveLong() {
+        return RandomNumbers.randomPositiveLong();
     }
 
     /**

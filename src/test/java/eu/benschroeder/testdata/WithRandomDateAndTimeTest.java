@@ -21,7 +21,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
     @Spy
     private WithRandomDateAndTime withRandomDateAndTime;
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastDate_isBeforeOrEqualToNow() {
 
         // WHEN
@@ -32,7 +32,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomFutureDate_isAfterOrEqualToNow() {
 
         // WHEN
@@ -43,7 +43,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastOffsetDateTime_isBeforeOrEqualToNow() {
 
         // WHEN
@@ -54,7 +54,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastOffsetDateTime_isAfterOrEqualToEpoch() {
 
         // WHEN
@@ -65,7 +65,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomFutureOffsetDateTime_isAfterOrEqualToNow() {
 
         // WHEN
@@ -76,7 +76,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastZonedDateTime_isBeforeOrEqualToNow() {
 
         // WHEN
@@ -87,7 +87,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastZonedDateTime_isAfterOrEqualToEpoch() {
 
         // WHEN
@@ -98,7 +98,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomFutureZonedDateTime_isAfterOrEqualToNow() {
 
         // WHEN
@@ -109,7 +109,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastLocalDateTime_isBeforeOrEqualToNow() {
 
         // WHEN
@@ -120,7 +120,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomFutureLocalDateTime_isAfterOrEqualToNow() {
 
         // WHEN
@@ -131,7 +131,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomPastLocalDate_isBeforeOrEqualToNow() {
 
         // WHEN
@@ -142,7 +142,7 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomFutureLocalDate_isAfterOrEqualToNow() {
 
         // WHEN
@@ -153,14 +153,14 @@ class WithRandomDateAndTimeTest implements WithAssertJForMockito, WithBDDMockito
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomLocalTime_isValid() {
 
         assertThatCode(() -> withRandomDateAndTime.randomLocalTime()).doesNotThrowAnyException();
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomOffsetTime_isValid() {
 
         assertThatCode(() -> withRandomDateAndTime.randomOffsetTime()).doesNotThrowAnyException();
