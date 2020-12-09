@@ -13,7 +13,7 @@ class WithRandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
     @Spy
     private WithRandomJson withRandomJson;
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomJson() {
 
         // WHEN
@@ -24,7 +24,7 @@ class WithRandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomJson_valueClassInteger() {
 
         // WHEN
@@ -35,7 +35,7 @@ class WithRandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomJson_valueClassString() {
 
         // WHEN

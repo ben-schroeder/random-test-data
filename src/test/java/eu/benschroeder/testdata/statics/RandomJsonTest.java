@@ -1,17 +1,13 @@
 package eu.benschroeder.testdata.statics;
 
 import eu.benschroeder.assertj.WithAssertJForMockito;
-import eu.benschroeder.mockito.WithBDDMockito;
 import eu.benschroeder.testdata.JsonPatterns;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
-@ExtendWith(MockitoExtension.class)
-class RandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
+class RandomJsonTest implements WithAssertJForMockito {
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomJson() {
 
         // WHEN
@@ -22,7 +18,7 @@ class RandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomJson_classInteger() {
 
         // WHEN
@@ -33,7 +29,7 @@ class RandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomJson_valueClassString() {
 
         // WHEN
@@ -67,4 +63,5 @@ class RandomJsonTest implements WithAssertJForMockito, WithBDDMockito {
                 .hasMessage("Value class can not be null.");
 
     }
+    
 }

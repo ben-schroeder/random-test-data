@@ -16,14 +16,14 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
     @Spy
     private WithRandomTestData withRandomTestData;
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomBoolean_isValid() {
 
         assertThatCode(() -> withRandomTestData.randomBoolean()).doesNotThrowAnyException();
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomByteArray_lengthIsTen() {
 
         // WHEN
@@ -34,7 +34,7 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomByteArray_lengthMatchesGivenLength() {
 
         // GIVEN
@@ -48,7 +48,7 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnum() {
 
         // WHEN
@@ -59,7 +59,7 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnumExcluding_noExclude() {
 
         // WHEN
@@ -70,7 +70,7 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnumExcluding_oneExclude() {
 
         // GIVEN
@@ -84,7 +84,7 @@ class WithRandomTestDataTest implements WithAssertJForMockito, WithBDDMockito {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1_000)
     void randomEnumExcluding_twoExcludes() {
 
         // GIVEN
