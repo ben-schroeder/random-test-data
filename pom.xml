@@ -25,7 +25,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mockito.version>3.6.28</mockito.version>
+        <mockito.version>3.8.0</mockito.version>
         <lombok.version>1.18.16</lombok.version>
         <commons-lang3.version>3.11</commons-lang3.version>
         <assertj.version>3.18.1</assertj.version>
