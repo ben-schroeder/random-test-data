@@ -27,7 +27,7 @@
         <lombok.version>1.18.36</lombok.version>
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <assertj.version>3.26.3</assertj.version>
-        <junit-jupiter.version>5.11.3</junit-jupiter.version>
+        <junit-jupiter.version>5.11.4</junit-jupiter.version>
     </properties>
 
     <dependencies>
